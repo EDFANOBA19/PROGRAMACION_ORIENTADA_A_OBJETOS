@@ -24,3 +24,19 @@ class Producto:
         else:
             print(f"No hay suficiente stock de {self.nombre}.")
             return False
+
+class Cliente:
+    """
+    Clase que representa un cliente de la tienda.
+    Atributos:
+        nombre (str): nombre del cliente
+        correo (str): correo electrónico del cliente
+    Métodos:
+        mostrar_info(): imprime información del cliente
+    """
+    def __init__(self, nombre, correo):
+        self.nombre = nombre
+        self.correo = correo
+
+    def mostrar_info(self):
+        print(f"Cliente: {self.nombre} | Correo: {self.correo}")

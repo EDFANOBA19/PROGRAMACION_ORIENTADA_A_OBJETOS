@@ -1,0 +1,6 @@
+[CREADO] Usuario: Laura, Edad: 22
+[DESTRUIDO] Usuario: Laura
+[CREADO] Usuario: Laura, Edad: 22
+[DESTRUIDO] Usuario: Laura
+[CREADO] Usuario: Laura, Edad: 22
+[DESTRUIDO] Usuario: Laura

@@ -51,7 +51,6 @@ def crear_usuario_temporal():
     print("[INFO] Saliendo de la función crear_usuario_temporal...")
     # Al finalizar esta función, la variable 'usuario' se elimina del alcance y se llama automáticamente al método __del__
 
-
 # Punto de entrada del programa
 if __name__ == "__main__":
     # Llamamos a la función que crea un usuario temporal

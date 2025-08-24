@@ -1,0 +1,11 @@
+P002 | Naranjas | 75 | 0.75
+P003 | Leche | 30 | 1.25
+P004 | Pan | 100 | 0.8
+P005 | Huevos | 200 | 0.1
+P001 | Manzanas | 250 | 0.25
+P001 | Manzanas | 50 | 0.5
+P007 | CHUPETES | 100 | 0.15
+P008 | GALLETAS | 500 | 0.5
+P009 | KCHITOS | 1000 | 1.0
+P001 | Manzanas | 50 | 0.5
+P001 | Manzanas | 50 | 0.5

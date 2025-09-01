@@ -1,0 +1,32 @@
+[
+    {
+        "id": "POO1",
+        "nombre": "LAPTOPS",
+        "cantidad": 200,
+        "precio": 500.0
+    },
+    {
+        "id": "POO2",
+        "nombre": "CELULARES",
+        "cantidad": 1,
+        "precio": 250.0
+    },
+    {
+        "id": "POO3",
+        "nombre": "MOUSE",
+        "cantidad": 10,
+        "precio": 25.0
+    },
+    {
+        "id": "POO4",
+        "nombre": "CABLES USB",
+        "cantidad": 15,
+        "precio": 1.0
+    },
+    {
+        "id": "POO5",
+        "nombre": "CARGADORES DE LAPTOP",
+        "cantidad": 200,
+        "precio": 25.0
+    }
+]

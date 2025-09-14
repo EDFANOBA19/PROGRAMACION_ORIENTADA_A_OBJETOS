@@ -1,71 +1,67 @@
-import tkinter as tk                   # Importar la librería Tkinter para GUI
-from tkinter import messagebox        # Importar módulo para cuadros de diálogo
+import tkinter as tk
+from tkinter import messagebox
 
 class AplicacionGUI:
     def __init__(self, root):
-        # Configuración ventana principal
+        # Guardamos la referencia a la ventana principal
         self.root = root
-        self.root.title("Gestor Básico de Datos – GUI con Tkinter")  # Título ventana
-        self.root.geometry("400x300")                               # Tamaño fijo ventana
+        # Título descriptivo de la ventana
+        self.root.title("Gestor Básico de Datos - Limpiar y Eliminar con un botón")
+        # Tamaño fijo para que la lista sea visible sin scroll
+        self.root.geometry("450x350")
 
-        # Crear una etiqueta para instrucciones al usuario
-        self.etiqueta = tk.Label(root, text="Ingrese información y agregue a la lista:")
-        self.etiqueta.pack(pady=10)  # Empaquetar etiqueta con espacio vertical (padding) de 10
+        # Etiqueta con instrucciones para el usuario
+        self.etiqueta = tk.Label(root, text="Ingrese información y presione 'Agregar'")
+        self.etiqueta.pack(pady=10)  # Margen vertical
 
-        # Crear un campo de texto para que el usuario escriba la información
-        self.entrada_texto = tk.Entry(root, width=40)   # Definir ancho del campo
-        self.entrada_texto.pack(pady=5)                  # Empaquetar con padding vertical de 5
+        # Campo de texto para ingresar datos
+        self.entrada_texto = tk.Entry(root, width=50)
+        self.entrada_texto.pack(pady=5)  # Margen vertical
 
-        # Crear un frame para colocar los botones en línea horizontal
+        # Frame que contiene los botones para alinearlos horizontalmente
         frame_botones = tk.Frame(root)
-        frame_botones.pack(pady=5)                       # Separar verticalmente
+        frame_botones.pack(pady=5)  # Margen vertical
 
-        # Botón que activa la función para agregar texto a la lista
-        self.boton_agregar = tk.Button(frame_botones,
-                                      text="Agregar",
-                                      command=self.agregar_elemento)
-        self.boton_agregar.pack(side=tk.LEFT, padx=5)   # Empaquetar a la izquierda con margen horizontal
+        # Botón para agregar el texto de entrada a la lista
+        self.boton_agregar = tk.Button(frame_botones, text="Agregar", command=self.agregar_elemento)
+        self.boton_agregar.pack(side=tk.LEFT, padx=10)  # Separación horizontal
 
-        # Botón que activa la función para limpiar el campo de texto
-        self.boton_limpiar = tk.Button(frame_botones,
-                                      text="Limpiar",
-                                      command=self.limpiar_entrada)
-        self.boton_limpiar.pack(side=tk.LEFT, padx=5)   # Al lado del botón anterior
+        # Botón "Limpiar" que hace doble función: limpiar campo y eliminar elemento seleccionado
+        self.boton_limpiar = tk.Button(frame_botones, text="Limpiar", command=self.limpiar_y_eliminar)
+        self.boton_limpiar.pack(side=tk.LEFT, padx=10)  # Separación horizontal
 
-        # Crear la lista que mostrará los datos añadidos por el usuario
-        self.lista_datos = tk.Listbox(root, width=50, height=10)
-        self.lista_datos.pack(pady=10)                   # Empaquetar la lista con espacio vertical
-
-        # Crear scrollbar y asociarla a la lista para manejar muchos elementos
-        self.scrollbar = tk.Scrollbar(self.lista_datos)
-        self.scrollbar.pack(side=tk.RIGHT, fill=tk.Y)    # Empaquetar scrollbar al lado derecho, llena verticalmente
-        self.lista_datos.config(yscrollcommand=self.scrollbar.set)  # Conectar scroll con lista
-        self.scrollbar.config(command=self.lista_datos.yview)       # Control de scroll hacia arriba/abajo
+        # Listbox para mostrar los datos que ingresa el usuario
+        self.lista_datos = tk.Listbox(root, width=60, height=15)
+        self.lista_datos.pack(pady=15)  # Margen vertical para que se vea la lista claramente
 
     def agregar_elemento(self):
         """
-        Función que se ejecuta al presionar el botón "Agregar".
-        Obtiene el texto del campo de entrada, valida que no esté vacío,
-        lo añade a la lista visual y limpia el campo de texto.
-        Si el texto está vacío, muestra advertencia.
+        Obtiene el texto ingresado, si no está vacío:
+        - Lo añade al final de la lista.
+        - Limpia el campo de texto para nueva entrada.
+        Si está vacío muestra advertencia.
         """
-        texto = self.entrada_texto.get().strip()  # Extraer texto y quitar espacios al inicio y final
-        if texto:
-            self.lista_datos.insert(tk.END, texto)  # Agregar al final de la lista el texto ingresado
-            self.entrada_texto.delete(0, tk.END)    # Limpiar entrada para próximo dato
+        texto = self.entrada_texto.get().strip()  # Eliminar espacios extras
+        if texto:  # Si no está vacío
+            self.lista_datos.insert(tk.END, texto)  # Añadir texto al final de la lista
+            self.entrada_texto.delete(0, tk.END)    # Limpiar campo entrada
         else:
-            # Mostrar ventana emergente de advertencia si no se ingresó texto
-            messagebox.showwarning("Entrada vacía", "Por favor, ingrese algún texto antes de agregar.")
+            # Mensaje para avisar que es necesario ingresar texto
+            messagebox.showwarning("Campo vacío", "Por favor ingrese algún texto antes de agregar.")
 
-    def limpiar_entrada(self):
+    def limpiar_y_eliminar(self):
         """
-        Función que se ejecuta al presionar el botón "Limpiar".
-        Limpia el contenido del campo de entrada dejando la lista intacta.
+        Limpia el campo de texto y elimina el elemento seleccionado de la lista:
+        - Siempre limpia la caja de texto.
+        - Elimina el item seleccionado si hay alguno.
         """
-        self.entrada_texto.delete(0, tk.END)  # Borra el contenido del campo texto desde el inicio hasta el final
+        self.entrada_texto.delete(0, tk.END)  # Limpiar campo
 
+        seleccion = self.lista_datos.curselection()  # Obtener índice(s) seleccionado(s)
+        if seleccion:
+            self.lista_datos.delete(seleccion[0])  # Eliminar el primer elemento seleccionado
 
 if __name__ == "__main__":
-    ventana = tk.Tk()         # Crear ventana raíz de Tkinter
-    app = AplicacionGUI(ventana)  # Instanciar la clase de la aplicación con esta ventana
-    ventana.mainloop()        # Ejecutar bucle principal para mostrar la ventana y responder eventos
+    ventana = tk.Tk()             # Crear ventana principal Tkinter
+    app = AplicacionGUI(ventana) # Instanciar la aplicación con esa ventana
+    ventana.mainloop()            # Empezar la escucha de eventos (mostrar ventana)

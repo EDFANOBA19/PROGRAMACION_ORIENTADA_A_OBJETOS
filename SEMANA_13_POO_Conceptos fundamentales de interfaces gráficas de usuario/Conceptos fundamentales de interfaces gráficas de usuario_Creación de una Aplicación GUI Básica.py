@@ -6,7 +6,7 @@ class AplicacionGUI:
         # Guardamos la referencia a la ventana principal
         self.root = root
         # Título descriptivo de la ventana
-        self.root.title("Gestor Básico de Datos - Limpiar y Eliminar con un botón")
+        self.root.title("Gestor Básico de Datos - GUI con tkinter")
         # Tamaño fijo para que la lista sea visible sin scroll
         self.root.geometry("450x350")
 

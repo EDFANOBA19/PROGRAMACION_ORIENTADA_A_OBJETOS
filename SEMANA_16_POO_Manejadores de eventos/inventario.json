@@ -1,8 +1,50 @@
 [
     {
-        "id": "P001",
-        "nombre": "CANDADOS",
+        "id": "P002",
+        "nombre": "MACHETES",
+        "cantidad": 300,
+        "precio": 7.5
+    },
+    {
+        "id": "P003",
+        "nombre": "SIERRAS ELECTRICAS",
+        "cantidad": 25,
+        "precio": 45.0
+    },
+    {
+        "id": "P004",
+        "nombre": "EXAGONALES TIPO ESTRELLA",
+        "cantidad": 10,
+        "precio": 5.0
+    },
+    {
+        "id": "P005",
+        "nombre": "CEMENTO CHIMBORAZO",
+        "cantidad": 300,
+        "precio": 8.25
+    },
+    {
+        "id": "P006",
+        "nombre": "CEMENTO ROCAFUERTE",
         "cantidad": 200,
-        "precio": 5.25
+        "precio": 8.0
+    },
+    {
+        "id": "P007",
+        "nombre": "MULTIMETRO DIGITAL",
+        "cantidad": 14,
+        "precio": 12.5
+    },
+    {
+        "id": "P008",
+        "nombre": "LIJAS # 180",
+        "cantidad": 400,
+        "precio": 0.5
+    },
+    {
+        "id": "P009",
+        "nombre": "REMOC\u00bfVEDOR DE PINTURA",
+        "cantidad": 20,
+        "precio": 7.5
     }
 ]

@@ -1,1 +1,8 @@
-ID: P001, Nombre: CANDADOS, Cantidad: 200, Precio: 5.25
+ID: P002, Nombre: MACHETES, Cantidad: 300, Precio: 7.5
+ID: P003, Nombre: SIERRAS ELECTRICAS, Cantidad: 25, Precio: 45.0
+ID: P004, Nombre: EXAGONALES TIPO ESTRELLA, Cantidad: 10, Precio: 5.0
+ID: P005, Nombre: CEMENTO CHIMBORAZO, Cantidad: 300, Precio: 8.25
+ID: P006, Nombre: CEMENTO ROCAFUERTE, Cantidad: 200, Precio: 8.0
+ID: P007, Nombre: MULTIMETRO DIGITAL, Cantidad: 14, Precio: 12.5
+ID: P008, Nombre: LIJAS # 180, Cantidad: 400, Precio: 0.5
+ID: P009, Nombre: REMOC¿VEDOR DE PINTURA, Cantidad: 20, Precio: 7.5

@@ -1,0 +1,1 @@
+ID: P001, Nombre: CANDADOS, Cantidad: 200, Precio: 5.25
